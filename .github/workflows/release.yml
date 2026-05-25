@@ -87,7 +87,7 @@ jobs:
     name: Build & Push Backend
     needs: [quality-gates]
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' && inputs.push_to_registry || startsWith(github.ref, 'refs/tags/')
+    if: always() && (github.event_name == 'workflow_dispatch' && inputs.push_to_registry || startsWith(github.ref, 'refs/tags/'))
     steps:
       - name: Checkout
         uses: actions/checkout@v4
