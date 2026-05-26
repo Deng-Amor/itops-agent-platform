@@ -9,16 +9,20 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# Enable npm cache for faster installs
+ENV npm_config_cache=/app/.npm-cache
+
 # Copy package files first for better layer caching
 COPY frontend/package.json frontend/package-lock.json ./
 
-# Install dependencies
-RUN npm ci
+# Install dependencies with cache optimization
+RUN --mount=type=cache,target=/app/.npm-cache \
+    npm ci --prefer-offline --no-audit --no-fund
 
 # Copy source code
 COPY frontend/ ./
 
-# Build frontend project
+# Build frontend project with TypeScript incremental compilation
 RUN npm run build
 
 # ============================================================
