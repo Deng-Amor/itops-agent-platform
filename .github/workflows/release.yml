@@ -130,7 +130,7 @@ jobs:
             org.opencontainers.image.description=Enterprise IT Operations Multi-Agent Automation Platform - Backend API Server
             org.opencontainers.image.vendor=谭策
             org.opencontainers.image.version=${{ steps.version.outputs.version }}
-            org.opencontainers.image.licenses=MIT
+            org.opencontainers.image.licenses=MPL-2.0
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
@@ -190,7 +190,7 @@ jobs:
             org.opencontainers.image.description=Enterprise IT Operations Multi-Agent Automation Platform - Web UI
             org.opencontainers.image.vendor=谭策
             org.opencontainers.image.version=${{ steps.version.outputs.version }}
-            org.opencontainers.image.licenses=MIT
+            org.opencontainers.image.licenses=MPL-2.0
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
