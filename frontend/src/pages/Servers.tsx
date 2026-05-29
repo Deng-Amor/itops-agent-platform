@@ -139,7 +139,7 @@ export default function Servers() {
     queryKey: ['ssh-keys'],
     queryFn: async () => {
       const res = await api.get('/api/ssh-keys');
-      return res.data.data as Array<{ id: string; name: string; key_type: string; fingerprint: string | null }>;
+      return res.data.data as Array<{ id: string; name: string; key_type: string; fingerprint: string | null; usage_count: number }>;
     },
   });
   const [selectedSshKeyId, setSelectedSshKeyId] = useState<string>('');
