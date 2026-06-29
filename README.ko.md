@@ -533,7 +533,6 @@ npm run dev
 
 | 아바타 | 이름 / 사용자명 | 역할 | 주요 기여 |
 | :-----------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------: | :--------: | :----------- |
-| <img src="./docs-assets/contributors/1.jpg" width="60" height="60" style="border-radius:50%;" /> | **탄 츠** ([@qinshihu](https://github.com/qinshihu)) | 프로젝트 저자 | 아키텍처 설계, 핵심 개발, 문서 |
 | <img src="./docs-assets/contributors/微信图片_2026-06-12_143259_183.jpg" width="60" height="60" style="border-radius:50%;" /> | **열성 시민 고 씨** | 위챗 기여자 | 테스트 피드백 |
 | <img src="./docs-assets/contributors/微信图片_2026-06-12_143226_852.jpg" width="60" height="60" style="border-radius:50%;" /> | **@린** | 위챗 기여자 | 테스트 피드백 |
 | <img src="./docs-assets/contributors/11.jpg" width="60" height="60" style="border-radius:50%;" /> | **얼둥천** | 위챗 기여자 | 테스트 |

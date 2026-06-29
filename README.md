@@ -534,7 +534,6 @@ npm run dev
 
 |                                                             头像                                                            |                      名称 / 用户名                     |     角色     | 主要贡献         |
 | :-----------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------: | :--------: | :----------- |
-|              <img src="./docs-assets/contributors/1.jpg" width="60" height="60" style="border-radius:50%;" />             | **谭策** ([@qinshihu](https://github.com/qinshihu)) |    项目作者    | 架构设计、核心开发、文档 |
 | <img src="./docs-assets/contributors/微信图片_2026-06-12_143259_183.jpg" width="60" height="60" style="border-radius:50%;" /> |                    **热心市民高先生**                    |    微信贡献者   | 测试反馈         |
 | <img src="./docs-assets/contributors/微信图片_2026-06-12_143226_852.jpg" width="60" height="60" style="border-radius:50%;" /> |                       **@林**                      |    微信贡献者   | 测试反馈         |
 |             <img src="./docs-assets/contributors/11.jpg" width="60" height="60" style="border-radius:50%;" />             |                      **尔东辰**                      |    微信贡献者   | 测试           |

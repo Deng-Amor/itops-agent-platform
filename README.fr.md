@@ -533,7 +533,6 @@ npm run dev
 
 | Avatar | Nom / Nom d'utilisateur | Rôle | Contribution principale |
 | :-----------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------: | :--------: | :----------- |
-| <img src="./docs-assets/contributors/1.jpg" width="60" height="60" style="border-radius:50%;" /> | **Tan Ce** ([@qinshihu](https://github.com/qinshihu)) | Auteur du projet | Conception d'architecture, développement principal, documentation |
 | <img src="./docs-assets/contributors/微信图片_2026-06-12_143259_183.jpg" width="60" height="60" style="border-radius:50%;" /> | **M. Gao (Citoyen engagé)** | Contributeur WeChat | Retour de test |
 | <img src="./docs-assets/contributors/微信图片_2026-06-12_143226_852.jpg" width="60" height="60" style="border-radius:50%;" /> | **@Lin** | Contributeur WeChat | Retour de test |
 | <img src="./docs-assets/contributors/11.jpg" width="60" height="60" style="border-radius:50%;" /> | **Er Dongchen** | Contributeur WeChat | Tests |

@@ -533,7 +533,6 @@ npm run dev
 
 | アバター | 名前 / ユーザー名 | 役割 | 主な貢献 |
 | :-----------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------: | :--------: | :----------- |
-| <img src="./docs-assets/contributors/1.jpg" width="60" height="60" style="border-radius:50%;" /> | **Tan Ce** ([@qinshihu](https://github.com/qinshihu)) | プロジェクト著者 | アーキテクチャ設計、核心開発、ドキュメント |
 | <img src="./docs-assets/contributors/微信图片_2026-06-12_143259_183.jpg" width="60" height="60" style="border-radius:50%;" /> | **熱心市民高氏** | WeChat貢献者 | テストフィードバック |
 | <img src="./docs-assets/contributors/微信图片_2026-06-12_143226_852.jpg" width="60" height="60" style="border-radius:50%;" /> | **@林** | WeChat貢献者 | テストフィードバック |
 | <img src="./docs-assets/contributors/11.jpg" width="60" height="60" style="border-radius:50%;" /> | **爾東辰** | WeChat貢献者 | テスト |
