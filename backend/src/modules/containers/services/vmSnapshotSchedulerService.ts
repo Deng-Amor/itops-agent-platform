@@ -123,7 +123,7 @@ class VmSnapshotSchedulerService {
       id: r.id, name: r.name, platformId: r.platform_id, vmId: r.vm_id,
       cronExpression: r.cron_expression, retention: r.retention,
       snapshotMemory: r.snapshot_memory === 1, enabled: r.enabled === 1,
-      lastRunAt: r.last_run_at, nextRunAt: r.next_run_at,
+      lastRunAt: r.last_run_at ?? undefined, nextRunAt: r.next_run_at ?? undefined,
       createdAt: r.created_at, updatedAt: r.updated_at,
     }));
   }
@@ -135,7 +135,7 @@ class VmSnapshotSchedulerService {
       id: row.id, name: row.name, platformId: row.platform_id, vmId: row.vm_id,
       cronExpression: row.cron_expression, retention: row.retention,
       snapshotMemory: row.snapshot_memory === 1, enabled: row.enabled === 1,
-      lastRunAt: row.last_run_at, nextRunAt: row.next_run_at,
+      lastRunAt: row.last_run_at ?? undefined, nextRunAt: row.next_run_at ?? undefined,
       createdAt: row.created_at, updatedAt: row.updated_at,
     };
   }

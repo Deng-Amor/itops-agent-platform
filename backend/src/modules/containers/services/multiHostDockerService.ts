@@ -181,11 +181,18 @@ class MultiHostDockerService {
     return rows.map((r) => this.rowToEndpoint(r));
   }
 
-  private rowToEndpoint(row: DockerEndpointRow): DockerEndpoint {
+  private rowToEndpoint(row: {
+    id: string; name: string; host: string; port: number;
+    protocol: string; tls_ca?: string | null; tls_cert?: string | null; tls_key?: string | null;
+    status: string; error_message?: string | null;
+    containers_running: number; containers_total: number;
+    images: number; cpu_count: number; memory_limit: number;
+    created_at: string; updated_at: string;
+  }): DockerEndpoint {
     return {
       id: row.id, name: row.name, host: row.host, port: row.port,
-      protocol: row.protocol as DockerEndpoint['protocol'], tlsCa: row.tls_ca, tlsCert: row.tls_cert, tlsKey: row.tls_key,
-      status: row.status as DockerEndpoint['status'], errorMessage: row.error_message,
+      protocol: row.protocol as DockerEndpoint['protocol'], tlsCa: row.tls_ca ?? undefined, tlsCert: row.tls_cert ?? undefined, tlsKey: row.tls_key ?? undefined,
+      status: row.status as DockerEndpoint['status'], errorMessage: row.error_message ?? undefined,
       containersRunning: row.containers_running, containersTotal: row.containers_total,
       images: row.images, cpuCount: row.cpu_count, memoryLimit: row.memory_limit,
       createdAt: row.created_at, updatedAt: row.updated_at,

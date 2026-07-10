@@ -64,7 +64,7 @@ export async function verifyResult(
     const parsedWorkflow: WorkflowParsed = {
       id: workflow.id,
       name: workflow.name,
-      description: workflow.description,
+      description: workflow.description ?? undefined,
       nodes,
       edges,
       agent_configs: agentConfigs,
@@ -143,9 +143,9 @@ export async function rollbackExecution(service: RemediationServiceLike, executi
     const parsedWorkflow: WorkflowParsed = {
       id: workflow.id,
       name: workflow.name,
-      description: workflow.description,
-      nodes: typeof workflow.nodes === 'string' ? JSON.parse(workflow.nodes) as WorkflowNode[] : workflow.nodes,
-      edges: typeof workflow.edges === 'string' ? JSON.parse(workflow.edges) as WorkflowEdge[] : workflow.edges,
+      description: workflow.description ?? undefined,
+      nodes: (typeof workflow.nodes === 'string' ? JSON.parse(workflow.nodes) : workflow.nodes) ?? [],
+      edges: (typeof workflow.edges === 'string' ? JSON.parse(workflow.edges) : workflow.edges) ?? [],
       agent_configs: workflow.agent_configs ? (typeof workflow.agent_configs === 'string' ? JSON.parse(workflow.agent_configs) : workflow.agent_configs) : {},
       is_template: workflow.is_template,
       created_at: workflow.created_at,

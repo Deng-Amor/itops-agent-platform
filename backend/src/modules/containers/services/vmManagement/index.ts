@@ -372,8 +372,8 @@ export class VMManagementService {
         result,
         status,
         error_message: errorMessage || null,
-        started_at: startedAt || null,
-        completed_at: completedAt || null,
+        started_at: startedAt ?? undefined,
+        completed_at: completedAt ?? undefined,
       });
     } catch (error) {
       logger.error('❌ 记录审计日志失败:', error);

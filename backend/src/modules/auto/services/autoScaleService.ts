@@ -138,12 +138,12 @@ class AutoScaleService {
   listRules(): ScaleRule[] {
     const rows = autoScaleRepository.listRules();
     return rows.map(r => ({
-      id: r.id, name: r.name, targetType: r.target_type, targetId: r.target_id,
-      targetName: r.target_name, metricType: r.metric_type,
+      id: r.id, name: r.name, targetType: r.target_type as ScaleRule['targetType'], targetId: r.target_id,
+      targetName: r.target_name ?? '', metricType: r.metric_type as ScaleRule['metricType'],
       threshold: r.threshold, targetValue: r.target_value,
       minInstances: r.min_instances, maxInstances: r.max_instances,
       scaleUpCooldown: r.scale_up_cooldown, scaleDownCooldown: r.scale_down_cooldown,
-      enabled: r.enabled === 1, lastScaleTime: r.last_scale_time,
+      enabled: r.enabled === 1, lastScaleTime: r.last_scale_time ?? undefined,
       createdAt: r.created_at, updatedAt: r.updated_at,
     }));
   }
@@ -152,12 +152,12 @@ class AutoScaleService {
     const row = autoScaleRepository.getRuleById(ruleId);
     if (!row) return null;
     return {
-      id: row.id, name: row.name, targetType: row.target_type, targetId: row.target_id,
-      targetName: row.target_name, metricType: row.metric_type,
+      id: row.id, name: row.name, targetType: row.target_type as ScaleRule['targetType'], targetId: row.target_id,
+      targetName: row.target_name ?? '', metricType: row.metric_type as ScaleRule['metricType'],
       threshold: row.threshold, targetValue: row.target_value,
       minInstances: row.min_instances, maxInstances: row.max_instances,
       scaleUpCooldown: row.scale_up_cooldown, scaleDownCooldown: row.scale_down_cooldown,
-      enabled: row.enabled === 1, lastScaleTime: row.last_scale_time,
+      enabled: row.enabled === 1, lastScaleTime: row.last_scale_time ?? undefined,
       createdAt: row.created_at, updatedAt: row.updated_at,
     };
   }
@@ -203,10 +203,10 @@ class AutoScaleService {
     const { rows, total } = autoScaleRepository.listHistory({ rule_id: ruleId, page, limit: pageSize });
     return {
       data: rows.map(r => ({
-        id: r.id, ruleId: r.rule_id, ruleName: r.rule_name, targetType: r.target_type,
-        targetId: r.target_id, action: r.action, previousCount: r.previous_count,
-        currentCount: r.current_count, metricValue: r.metric_value,
-        result: r.result, reason: r.reason, timestamp: r.timestamp,
+        id: r.id, ruleId: r.rule_id ?? '', ruleName: r.rule_name ?? '', targetType: r.target_type ?? '',
+        targetId: r.target_id ?? '', action: r.action as ScaleHistory['action'], previousCount: r.previous_count ?? 0,
+        currentCount: r.current_count ?? 0, metricValue: r.metric_value ?? 0,
+        result: r.result as ScaleHistory['result'], reason: r.reason ?? undefined, timestamp: r.timestamp,
       })),
       total,
     };

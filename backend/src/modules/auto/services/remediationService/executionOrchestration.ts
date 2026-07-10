@@ -129,7 +129,7 @@ export async function executeWorkflow(service: RemediationServiceLike, execution
     const parsedWorkflow: WorkflowParsed = {
       id: workflow.id,
       name: workflow.name,
-      description: workflow.description,
+      description: workflow.description ?? undefined,
       nodes,
       edges,
       agent_configs: agentConfigs,

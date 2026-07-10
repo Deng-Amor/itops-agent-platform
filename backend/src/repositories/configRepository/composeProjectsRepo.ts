@@ -35,7 +35,7 @@ export interface ComposeProjectCreateInput {
 
 export interface ComposeProjectUpdateInput {
   name: string;
-  description: string;
+  description: string | null;
   compose_content: string;
   tags: string;
   updated_at: string;
