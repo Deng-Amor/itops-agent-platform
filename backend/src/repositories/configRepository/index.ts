@@ -4,12 +4,15 @@
  * 组合 composes_projects、network_config_backups、config_repair_records 三个子仓库。
  */
 
+import { composeProjectsRepo } from './composeProjectsRepo';
 export { composeProjectsRepo } from './composeProjectsRepo';
 export type { ComposeProjectRecord, ComposeProjectCreateInput, ComposeProjectUpdateInput } from './composeProjectsRepo';
 
+import { networkConfigBackupsRepo } from './networkConfigBackupsRepo';
 export { networkConfigBackupsRepo } from './networkConfigBackupsRepo';
 export type { NetworkConfigBackupRecord, NetworkConfigBackupWithDevice, NetworkConfigBackupCreateInput } from './networkConfigBackupsRepo';
 
+import { configRepairRecordsRepo } from './configRepairRecordsRepo';
 export { configRepairRecordsRepo } from './configRepairRecordsRepo';
 export type { ConfigRepairRecord, ConfigRepairCreateInput, ConfigRepairListFilters } from './configRepairRecordsRepo';
 

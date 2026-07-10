@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { randomUUID } from 'crypto';
 import { logger } from '../../../utils/logger';
-import { imageRegistryRepository } from '../../../../repositories';
+import { imageRegistryRepository } from '../../../repositories';
 import { credentialService } from '../../auth/services/credentialService';
 import { getErrorMessage } from '../../../utils/errorHelpers';
 

@@ -33,23 +33,27 @@ const v052KnowledgeBase: Migration = {
         created_at DATETIME DEFAULT (datetime('now','localtime')),
         updated_at DATETIME DEFAULT (datetime('now','localtime'))
       );
-      CREATE INDEX IF NOT EXISTS idx_kb_category ON knowledge_base(category);
-      CREATE INDEX IF NOT EXISTS idx_kb_source ON knowledge_base(source);
-      CREATE INDEX IF NOT EXISTS idx_kb_alert_id ON knowledge_base(alert_id);
-      CREATE INDEX IF NOT EXISTS idx_kb_workflow_id ON knowledge_base(workflow_id);
     `);
 
     // 兼容旧数据的列补齐（幂等）
     const addColumnIfMissing = (col: string, def: string) => {
       try { db.exec(`ALTER TABLE knowledge_base ADD COLUMN ${col} ${def}`); } catch { /* 列已存在 */ }
     };
-    addColumnIfMissing('success_rating', 'REAL DEFAULT 0.5');
     addColumnIfMissing('source', "TEXT DEFAULT 'manual'");
     addColumnIfMissing('alert_id', 'TEXT');
     addColumnIfMissing('workflow_id', 'TEXT');
     addColumnIfMissing('task_id', 'TEXT');
     addColumnIfMissing('server_id', 'TEXT');
+    addColumnIfMissing('success_rating', 'REAL DEFAULT 0.5');
     addColumnIfMissing('duration_ms', 'INTEGER');
+    addColumnIfMissing('usage_count', 'INTEGER DEFAULT 1');
+
+    db.exec(`
+      CREATE INDEX IF NOT EXISTS idx_kb_category ON knowledge_base(category);
+      CREATE INDEX IF NOT EXISTS idx_kb_source ON knowledge_base(source);
+      CREATE INDEX IF NOT EXISTS idx_kb_alert_id ON knowledge_base(alert_id);
+      CREATE INDEX IF NOT EXISTS idx_kb_workflow_id ON knowledge_base(workflow_id);
+    `);
   },
 
   down: async (db: any) => {

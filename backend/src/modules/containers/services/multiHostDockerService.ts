@@ -2,7 +2,7 @@
 import Docker from 'dockerode';
 import { randomUUID } from 'crypto';
 import { logger } from '../../../utils/logger';
-import { dockerEndpointRepository } from '../../../../repositories';
+import { dockerEndpointRepository } from '../../../repositories';
 import { getErrorMessage } from '../../../utils/errorHelpers';
 
 interface DockerEndpoint {

@@ -95,7 +95,10 @@ export function safeLog(...args: unknown[]): void {
     }
     return arg;
   });
-  logger.info(...maskedArgs);
+  if (maskedArgs.length === 0) return;
+  const message = String(maskedArgs[0]);
+  const meta = maskedArgs.length > 1 ? maskedArgs.slice(1) : undefined;
+  logger.info(message, meta);
 }
 
 export function safeError(...args: unknown[]): void {

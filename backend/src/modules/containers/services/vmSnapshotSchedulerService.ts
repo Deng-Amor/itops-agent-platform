@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { randomUUID } from 'crypto';
 import { logger } from '../../../utils/logger';
-import { vmSnapshotPolicyRepository } from '../../../../repositories';
+import { vmSnapshotPolicyRepository } from '../../../repositories';
 import { vmManagementService } from '../../containers/services/vmManagement';
 
 interface SnapshotPolicy {

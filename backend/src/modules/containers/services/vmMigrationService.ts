@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { logger } from '../../../utils/logger';
 import { randomUUID } from 'crypto';
-import { vmMigrationRepository, virtualMachineRepository } from '../../../../repositories';
+import { vmMigrationRepository, virtualMachineRepository } from '../../../repositories';
 import { vmManagementService } from '../../containers/services/vmManagement';
 
 interface MigrationTask {

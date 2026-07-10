@@ -1,5 +1,6 @@
 import type { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import { logger } from '../utils/logger';
 import { userRepository } from '../repositories/userRepository';
 import { env } from '../utils/env';
 import { tokenBlacklist } from '../modules/auth/services/tokenBlacklist';

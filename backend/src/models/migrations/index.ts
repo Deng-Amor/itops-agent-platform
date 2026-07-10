@@ -96,6 +96,9 @@ import v054AlertAutoAnalysis from './v054_alert_auto_analysis';
 // === 运行时建表残留清理 v055 ===
 import v055VmManagementTables from './v055_vm_management_tables';
 
+// === 告警设备关联 v056 ===
+import v056AlertsDeviceId from './v056_alerts_device_id';
+
 // Helper: wrap sync up/down into async
 function wrapAsync(fn: (db: any) => void): (db: any) => Promise<void> {
   return async (db: any) => { fn(db); };
@@ -339,6 +342,8 @@ export const ALL_MIGRATIONS: Migration[] = [
   v054AlertAutoAnalysis,
   // v055: 运行时建表残留清理（initVMManagement 下沉）
   v055VmManagementTables,
+  // v056: 告警设备关联（DC 状态监控需要）
+  v056AlertsDeviceId,
 ];
 
 export function createMigrationManager(db: any): MigrationManager {
