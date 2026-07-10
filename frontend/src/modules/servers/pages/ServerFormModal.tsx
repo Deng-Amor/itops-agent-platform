@@ -1,4 +1,3 @@
-import { _useRef } from 'react';
 import { CheckCircle2, X } from 'lucide-react';
 import type { Server } from './types';
 import { SshKeySection } from './SshKeySection';

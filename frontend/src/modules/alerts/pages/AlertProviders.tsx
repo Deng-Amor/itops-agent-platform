@@ -1,6 +1,6 @@
 import { useState, useMemo as _useMemo } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { RefreshCw, Plus, Edit, Trash2, Copy, CheckCircle, Link, Globe, _Zap, Info, TestTube } from 'lucide-react';
+import { RefreshCw, Plus, Edit, Trash2, Copy, CheckCircle, Link, Globe, Info, TestTube } from 'lucide-react';
 import { clsx } from 'clsx';
 import api from '../../../lib/api';
 import { getAxiosErrorMessage } from '@/lib/errorHandler';

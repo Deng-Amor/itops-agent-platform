@@ -28,7 +28,7 @@ export default function RemoteDesktop() {
   const [selectedServer, setSelectedServer] = useState<string | undefined>(serverId);
   const [isConnected, setIsConnected] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [_vncConfig, _setVncConfig] = useState<VNCConfig | null>(null);
+  const [_vncConfig, setVncConfig] = useState<VNCConfig | null>(null);
   const [error, setError] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const socketRef = useRef<Socket | null>(null);

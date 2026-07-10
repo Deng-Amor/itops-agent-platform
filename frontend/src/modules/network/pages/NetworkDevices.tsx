@@ -15,7 +15,7 @@ import InspectionResult from '../../../modules/alerts/components/InspectionResul
 import SnmpInspectionResult from '../../../modules/network/components/SnmpInspectionResult';
 import InspectionHistory from '../../../modules/alerts/components/InspectionHistory';
 import { useEscapeKey } from '../../../hooks/useEscapeKey';
-import { _safeFormatDistance } from '../../../lib/date';
+import { safeFormatDistance as _safeFormatDistance } from '../../../lib/date';
 import { getAxiosErrorMessage } from '@/lib/errorHandler';
 
 interface NetworkDevice {

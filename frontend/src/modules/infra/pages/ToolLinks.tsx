@@ -63,7 +63,7 @@ export default function ToolLinks() {
   const [deleteConfirm, setDeleteConfirm] = useState<ToolLink | null>(null);
   const [showIconPicker, setShowIconPicker] = useState(false);
   const [iconMode, setIconMode] = useState<'lucide' | 'upload'>('lucide');
-  const [_uploading, _setUploading] = useState(false);
+  const [_uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState({
     name: '', url: '', icon: 'ExternalLink', category: '未分类',

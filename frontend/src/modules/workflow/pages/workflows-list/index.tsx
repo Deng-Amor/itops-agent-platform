@@ -51,7 +51,7 @@ export default function Workflows() {
 
   const duplicateMutation = useMutation({
     mutationFn: async (workflow: Workflow) => {
-      const { _id, _created_at, _updated_at, ...cleanWorkflow } = {
+      const { id: _id, created_at: _created_at, updated_at: _updated_at, ...cleanWorkflow } = {
         ...workflow,
         name: `${workflow.name} (副本)`,
         is_template: 0,

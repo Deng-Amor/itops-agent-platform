@@ -56,7 +56,7 @@ export default function Servers() {
     // Compliance options
     complianceOptions, setComplianceOptions,
     // Data
-    _agents, sshKeys, groupsData, servers, isLoading,
+    agents: _agents, sshKeys, groupsData, servers, isLoading,
     allTags,
     filteredTagSuggestions,
     filteredServers,

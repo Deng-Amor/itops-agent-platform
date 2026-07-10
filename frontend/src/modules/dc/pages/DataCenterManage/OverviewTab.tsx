@@ -12,7 +12,7 @@ interface OverviewTabProps {
 }
 
 export default function OverviewTab({
-  overview, rooms, _racks, rackAlertMap,
+  overview, rooms, racks: _racks, rackAlertMap,
   onAddRoom, onSelectRack,
 }: OverviewTabProps) {
   if (!overview) return <Spin className="flex justify-center py-20" />;

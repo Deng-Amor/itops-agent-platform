@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import {
   Radio, Search, Loader2, CheckCircle2, AlertCircle, XCircle,
-  Plus as _Plus, _Trash2, Play, Square, Wifi, _Map, Download, Monitor,
-  Globe, Server, _RefreshCw, Clock, HardDrive
+  Plus as _Plus, Trash2, Play, Square, Wifi, Map as _Map, Download, Monitor,
+  Globe, Server, RefreshCw as _RefreshCw, Clock, HardDrive
 } from 'lucide-react';
 import clsx from 'clsx';
 import api from '../../../lib/api';
 import { getAxiosErrorMessage } from '../../../lib/errorHandler';
 import { useToast } from '../../../contexts/ToastContext';
-import { _safeFormatDistance } from '../../../lib/date';
+import { safeFormatDistance as _safeFormatDistance } from '../../../lib/date';
 
 interface DiscoveryJob {
   id: string;
@@ -53,7 +53,7 @@ interface SnmpCredential {
 export default function NetworkDiscovery() {
   const queryClient = useQueryClient();
   const toast = useToast();
-  const [_activeTab, _setActiveTab] = useState<'jobs' | 'results'>('jobs');
+  const [_activeTab, setActiveTab] = useState<'jobs' | 'results'>('jobs');
 
   // 扫描表单
   const [scanName, setScanName] = useState('');

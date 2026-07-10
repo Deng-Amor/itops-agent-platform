@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Table, Button, Modal, Form, Input, Select, Tag, Space, message, Popconfirm, Progress } from 'antd';
-import { Plus, Edit, Trash2, Search, RefreshCw, HardDrive as _HardDrive } from 'lucide-react';
+import { Plus, Edit, Trash2, Search, RefreshCw } from 'lucide-react';
 import api from '../../../lib/api';
 
 interface Volume {

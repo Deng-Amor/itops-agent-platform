@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Card, Table, Tabs, Row, Col, Tag, Button, Modal, Input, Select, InputNumber, Switch, Space, message, Spin, Empty, DatePicker, Statistic } from 'antd';
 import { ReloadOutlined, PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import { TrendingUp, _Activity, ArrowUpRight, ArrowDownRight, Server, Zap, Play as _Play, Pause as _Pause } from 'lucide-react';
+import { TrendingUp, Activity as _Activity, ArrowUpRight, ArrowDownRight, Server, Zap, Play as _Play, Pause as _Pause } from 'lucide-react';
 import api from '../../../lib/api';
 
 // ==================== 类型定义 ====================

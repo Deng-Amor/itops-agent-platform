@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Activity, Search, Loader2, Zap, Wifi, FileText, Server, Eye, _Bell, _Clock, CheckCircle2, AlertCircle, AlertTriangle, TrendingUp } from 'lucide-react';
+import { Activity, Search, Loader2, Zap, Wifi, FileText, Server, Eye, CheckCircle2, AlertCircle, AlertTriangle, TrendingUp } from 'lucide-react';
 import TrendCharts from '../../../modules/monitor/components/TrendCharts';
 import clsx from 'clsx';
 import api from '../../../lib/api';

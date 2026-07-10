@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import {
-  Plus, _Trash2, Search, Loader2, CheckCircle2, AlertCircle, Play, _Key, Radio,
+  Plus, Trash2 as _Trash2, Search, Loader2, CheckCircle2, AlertCircle, Play, Key as _Key, Radio,
 } from 'lucide-react';
 import clsx from 'clsx';
 import api from '../../../lib/api';

@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { Bot, GitBranch, Play, Bell, _TrendingUp, _TrendingDown, _Minus, Clock, Server, BookOpen, Zap, Activity, Shield } from 'lucide-react';
+import { Bot, GitBranch, Play, Bell, TrendingUp as _TrendingUp, TrendingDown as _TrendingDown, Minus as _Minus, Clock, Server, BookOpen, Zap, Activity, Shield } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import api from '../../../lib/api';

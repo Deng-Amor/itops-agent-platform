@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import {
-  Network, Plus, _Trash2, Search, RefreshCw, Edit, Globe,
+  Network, Plus, Trash2, Search, RefreshCw, Edit, Globe,
   Router, MapPin, Layers, ArrowLeft, Check, X, AlertCircle,
-  _MoreHorizontal, _Upload,
+  MoreHorizontal as _MoreHorizontal, Upload as _Upload,
 } from 'lucide-react';
 import clsx from 'clsx';
 import api from '../../../lib/api';

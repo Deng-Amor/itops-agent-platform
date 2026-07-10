@@ -2,13 +2,13 @@
 import { useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { 
-  _Plus, 
+  Plus as _Plus,
   RefreshCw, 
   Wrench, 
   Bell, 
   MessageSquare, 
   Activity, 
-  _Globe,
+  Globe as _Globe,
   Search,
   Play,
 } from 'lucide-react';

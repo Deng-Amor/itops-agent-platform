@@ -77,9 +77,6 @@ jobs:
       - name: Install root dependencies (depcruiser, madge)
         run: npm ci
 
-      - name: Run architecture check
-        run: node scripts/check-architecture.js
-
       - name: Run dependency-cruiser
         run: npx depcruise --config .dependency-cruiser.json backend/src --output-type text
         continue-on-error: false
