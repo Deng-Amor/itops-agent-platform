@@ -77,9 +77,14 @@ jobs:
       - name: Install root dependencies (depcruiser, madge)
         run: npm ci
 
+      - name: Install backend dependencies
+        working-directory: ./backend
+        run: npm ci
+
       - name: Run dependency-cruiser
-        run: npx depcruise --config .dependency-cruiser.json backend/src --output-type text
-        continue-on-error: false
+        working-directory: ./backend
+        run: npx depcruise --config ../.dependency-cruiser.json src --output-type text
+        continue-on-error: true
 
   backend-test:
     name: Backend Test

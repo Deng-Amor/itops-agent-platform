@@ -15,7 +15,7 @@
     },
     "tsPreCompilationDeps": true,
     "tsConfig": {
-      "fileName": "./backend/tsconfig.json"
+      "fileName": "tsconfig.json"
     },
     "enhancedResolveOptions": {
       "exportsFields": ["exports"],
