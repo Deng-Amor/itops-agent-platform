@@ -54,7 +54,9 @@ jobs:
 
       - name: Build frontend dist
         working-directory: frontend
-        run: npm ci && npm run build
+        run: |
+          npm ci --verbose 2>&1 | tail -50
+          npm run build 2>&1
 
       - name: Configure SSH
         env:
