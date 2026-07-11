@@ -21,17 +21,12 @@ export default function Login() {
     try {
       const response = await api.post('/auth/login', { username, password });
 
-      if (response.data.success) {
-        login(response.data.data.token, response.data.data.user, response.data.data.refreshToken);
-        
-        // 检查是否需要强制修改密码
-        if (response.data.data.user.passwordMustChange) {
-          navigate('/force-password-change', { replace: true });
-        } else {
-          navigate('/dashboard');
-        }
+      login(response.data.token, response.data.user, response.data.refreshToken);
+      
+      if (response.data.user.passwordMustChange) {
+        navigate('/force-password-change', { replace: true });
       } else {
-        setError(response.data.error || response.data.message || '登录失败，请检查用户名和密码');
+        navigate('/dashboard');
       }
     } catch (err: unknown) {
       setError(getAxiosErrorMessage(err, '网络错误，请稍后重试'));
