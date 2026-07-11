@@ -25,26 +25,6 @@ interface DockerEndpoint {
   updatedAt: string;
 }
 
-interface DockerEndpointRow {
-  id: string;
-  name: string;
-  host: string;
-  port: number;
-  protocol: string;
-  tls_ca?: string;
-  tls_cert?: string;
-  tls_key?: string;
-  status: string;
-  error_message?: string;
-  containers_running: number;
-  containers_total: number;
-  images: number;
-  cpu_count: number;
-  memory_limit: number;
-  created_at: string;
-  updated_at: string;
-}
-
 class MultiHostDockerService {
   private endpoints: Map<string, Docker> = new Map();
 
