@@ -23,7 +23,7 @@ const processQueue = (error: Error | null, result: TokenRefreshResult | null = n
 };
 
 const api = axios.create({
-  baseURL: '/api/v1',
+  baseURL: '/api',
   timeout: 120000,
   headers: {
     'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const api = axios.create({
 });
 
 const refreshApi = axios.create({
-  baseURL: '/api/v1',
+  baseURL: '/api',
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
