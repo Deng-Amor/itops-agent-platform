@@ -178,11 +178,13 @@ describe('RegistryService', () => {
         'new-registry',
         'dockerhub',
         'https://hub.docker.com',
-        null,
-        null,
-        null,
-        expect.any(String), // now
-        expect.any(String), // now
+        null, // username
+        null, // encrypted_password
+        null, // encrypted_password_iv
+        'unknown', // status
+        null, // error_message
+        0, // project_count
+        0, // repo_count
       );
       expect(result).not.toBeNull();
       expect(result.name).toBe('test-harbor');
@@ -343,8 +345,9 @@ describe('RegistryService', () => {
       expect(result.message).toBe('Connection refused');
       // Should update the registry status to error
       expect(stmt.run).toHaveBeenCalledWith(
-        'Connection refused',
-        'reg-001'
+        'error', // status
+        'Connection refused', // error_message
+        'reg-001' // id
       );
     });
   });

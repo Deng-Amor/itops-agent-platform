@@ -146,7 +146,7 @@ describe('VmMigrationService', () => {
       expect(task.reason).toBe('scale-up');
       expect(task.startedAt).toBeDefined();
 
-      // Verify DB insert
+      // Verify DB insert (repository.create calls with 13 parameters)
       expect(stmt.run).toHaveBeenCalledWith(
         task.id,
         'vm-001',
@@ -155,8 +155,11 @@ describe('VmMigrationService', () => {
         'host-b',
         'plat-001',
         'running',
+        0, // progress
         'scale-up',
-        expect.any(String), // startedAt
+        null, // error_message
+        expect.any(String), // started_at
+        null, // completed_at
       );
     });
 
@@ -238,11 +241,12 @@ describe('VmMigrationService', () => {
       const stmt = getMockStmt();
       const rows = [createMigrationRow()];
       stmt.all.mockReturnValue(rows);
+      stmt.get.mockReturnValue({ count: 1 });
 
       const result = vmMigrationService.listMigrations('vm-001');
 
       expect(db.prepare).toHaveBeenCalledWith(
-        expect.stringContaining('WHERE vm_id = ?')
+        expect.stringContaining('WHERE 1=1 AND vm_id = ?')
       );
       expect(result).toHaveLength(1);
     });
