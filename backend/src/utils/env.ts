@@ -54,7 +54,7 @@ function getEnvAsNumber(key: string, defaultValue: number): number {
 }
 
 function parseWebhookVerifyMode(value: string | undefined): 'true' | 'false' | 'warn' {
-  if (value === undefined || value === '') return 'true';
+  if (value === undefined || value === '') return 'warn';
   const normalized = value.trim().toLowerCase();
   if (normalized === 'false' || normalized === '0' || normalized === 'off' || normalized === 'no') return 'false';
   if (normalized === 'warn') return 'warn';
